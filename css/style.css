@@ -1,0 +1,77 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    align-items: center;
+    z-index: 99;
+}
+nav .logo{
+    flex: 1; margin-left: 60px;
+}
+ul{
+    display: flex;
+}
+nav ul li{
+    flex-direction: row;
+    padding-right: 45px;
+    list-style: none;
+}
+nav ul li a{
+    text-decoration: none;
+    color: black;
+    font-size: 1.2em;
+    font-weight: 700;
+    font-family: 'Barlow Condensed', sans-serif;
+    text-transform: uppercase;
+}
+.main{display: flex; justify-content: space-between; flex-wrap: wrap-reverse;}
+nav ul li a:hover{border-bottom: 2px solid cadetblue;}
+nav .menu{font-size: 2.5em; display: none;}
+.left{width: 38%; padding: 80px; margin-top: 100px; line-height: 50px; word-spacing: 5px; letter-spacing: 1px;}
+h1{font-size: 45px; font-weight: bolder; font-family: 'Barlow Condensed', sans-serif;}
+w{border: 1px solid rgb(11, 11, 49); border-radius: 18px; padding: 5px; background-color: rgb(11, 11, 49); color: white; font-family: 'Barlow', sans-serif;}
+p{font-size: 20px; color: gray; font-family: 'Barlow', sans-serif;} m{color: gray; font-family: 'Barlow', sans-serif;}
+b{font-size: 18px; color: gray; font-family: 'Barlow', sans-serif;}
+.right{width: 50%;} .dev{width: 100%; margin-top: 100px; padding: 50px; padding-left: 0px; padding-right: 0px;}
+button{padding:15px; border: 1px solid tomato; border-radius: 5px; margin-top: 30px; background-color: tomato; 
+    color: white; font-family: 'Barlow', sans-serif;}
+
+@media screen and (max-width: 1000px){
+    .right{width: 100%;} 
+    .dev{margin-top: 0px; padding-top: 0px;}
+    .left{width: 100%; padding: 15px; margin-top: 0px; line-height: 35px; word-spacing: 0px; letter-spacing: 0px;}
+    b{font-size: 14px;} h1{font-size: 26px;}
+    button{padding: 15px 0px;}
+    nav ul{
+        position: fixed;
+        top: 100px;
+        right: -100%;
+        background: whitesmoke;
+        height: calc(100vh - 100px);
+        width: 50%;
+        flex-direction: column;
+        align-items: center;
+        transition: right 0.5s linear;
+    }
+    nav .menu{
+        display: block;
+        width: 100px;
+        text-align: center;
+    }
+    #chk1:checked ~ ul{
+        right: 0;
+    }
+}
+@media screen and (max-width: 500px){
+    nav .logo{
+        margin-left: 15px;
+    }
+    .logo h1{font-size: 1.5em;}
+    nav ul{width: 100%;}
+}
+input[type="checkbox"]{display: none;}
+#chk1:checked ~ ul{right: 0;}
